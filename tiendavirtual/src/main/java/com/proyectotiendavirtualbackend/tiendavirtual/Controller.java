@@ -9,12 +9,12 @@ import tiendavirtual.DTO.*;
 @RestController
 public class Controller {
 	//Aquí permite consultar la lista de estudiantes
-	@RequestMapping("/listarEstidiantes")
-	public ArrayList<Estudiante> listaDeEstidiantes(){
+	@RequestMapping("/listarEstudiantes")
+	public ArrayList<Estudiante> listaDeEstudiantes(){
 		EstudianteDAO objDAO=new EstudianteDAO();
 		return objDAO.listaDeEstudiantes();
 	}
-	@PostMapping("resgistrarEstudiante")
+	@PostMapping("/resgistrarEstudiante")
 	public Estudiante registrarEstudiante(@RequestBody Estudiante persona) {
 		EstudianteDAO dao =new EstudianteDAO();
 		return dao.registrarEstudiante(persona);

@@ -17,10 +17,10 @@ public class EstudianteDAO {
 		ArrayList<Estudiante> misEstudiantes = new ArrayList<Estudiante>();
 		conexion Conex = new conexion();
 		try {
-			PreparedStatement consulta = Conex.getConnection().prepareStatement("SELECT * FROM USUARIOS");	
+			PreparedStatement consulta = Conex.getConnection().prepareStatement("SELECT * FROM usuarios");	
 			ResultSet res = consulta.executeQuery();
 			while(res.next()) {
-				int cedula_usuario= Integer.parseInt(res.getNString("cedula_usuario"));
+				int cedula_usuario= Integer.parseInt(res.getString("cedula_usuario"));
 				String email_usuario= res.getString("email_usuario");
 				String nombre_usuario= res.getString("nombre_uruario");
 				String password=res.getNString("password");
